@@ -12,6 +12,9 @@ state= {}
 
   componentDidMount(){
     fetch('https://yts.mx/api/v2/list_movies.json/sort_by=rating')
+    .then(response => response.json())
+    .then(json => console.log(json))
+    .catch(err => console.log(err))
   }
     
 
