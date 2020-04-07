@@ -8,22 +8,10 @@ import Movie from './Movie.js'
 
 class App extends Component {
 
-  state = {
-    
-  }
+state= {}
 
   componentDidMount(){
-    setTimeout(()=>{
-      this.setState({
-        movies: [
-          ...this.state.movies,
-          {
-            title : "Transportting",
-            poster : "https://post-phinf.pstatic.net/MjAxOTA0MTZfNyAg/MDAxNTU1MzcxODAwOTA1.u9goQ7xANTfZdBhYTmtSK3bgE3yl0u66CHDE-S61CGog.EJ_bfU0Bww6Q6b55j4TeI30RNJpne4-Za2jsTESev5gg.JPEG/sw_ros_main.jpg?type=w1200&type=w1200"
-          }
-        ]
-      })
-    }, 5000)
+    fetch('https://yts.mx/api/v2/list_movies.json/sort_by=rating')
   }
     
 
@@ -33,6 +21,8 @@ class App extends Component {
     })
     return movies
   }
+
+
   render() {
     return (
       <div className='App'>
